@@ -1,2 +1,2 @@
-css/main.css  linguist-vendored
-css/util.css  linguist-vendored
+css/*  linguist-vendored
+vendor/*  linguist-vendored
