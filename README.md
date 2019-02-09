@@ -1,6 +1,7 @@
- #tenebris
- Tenebris is an encryption and decryption program to reach secure conversatio
-
+ #tenebris <br>
+ Tenebris is an encryption and decryption program to reach secure conversations
+  <br>
+ 
 1) Encrypt Method
     <br>    
  ![screenshots/encrypt1](screenshots/encrypt1.png) 
