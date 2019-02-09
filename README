@@ -1,0 +1,15 @@
+Tenebris is an encryption and decryption program to reach secure conversations
+
+1) Encrypt text with private key
+    <br>
+  ![screenshots/encrypt1](screenshots/encrypt1.png) 
+    <br>
+![screenshots/encrypt2](screenshots/encrypt2.png) 
+
+    <br><br>
+
+2) Decrypt text with private key
+     <br>
+![screenshots/decrypt1](screenshots/decrypt1.png) 
+   <br>
+![screenshots/decrypt2](screenshots/decrypt2.png) 
