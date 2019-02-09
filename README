@@ -1,0 +1,12 @@
+# tenebris
+Tenebris is an encryption and decryption program to reach secure conversations
+
+1) Encrypt text with private key
+    <br>
+<img width="100" height="100" src="screenshots/encrypt.png">
+
+    <br><br>
+
+2) Decrypt text with private key
+     <br>
+<img width="100" height="100" src="screenshots/decrypt.png">
