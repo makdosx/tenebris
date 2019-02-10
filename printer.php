@@ -126,7 +126,7 @@ if (isset($_POST['submit_encrypted_text']))
       
 
 echo"<div align='center' id='print_text' class='wrap'>
-        <font size='5'color='red'> Decrypted Text Output </font> 
+        <font size='5'color='red'> Encrypted Text Output </font> 
          <br><br>
      $print_encrypted_text
       </div>";
