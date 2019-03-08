@@ -70,7 +70,7 @@ border-width:3px;
 border-radius: 5px;
 border-color:black;
 height:50px;
-width:150px;
+width:250px;
 background-color:#4f0817;
 color:white;
 }
@@ -83,12 +83,87 @@ border-width:3px;
 border-radius: 5px;
 border-color:black;
 height:50px;
-width:150px;
+width:250px;
 background-color:#3c0510;
 color:white;
 }
 
+
+
+.print2
+{
+border-style:solid;
+border-width:3px;
+border-radius: 5px;
+border-color:black;
+height:40px;
+width:250px;
+background-color:#4f0817;
+color:white;
+}
+
+
+.print2:hover
+{
+border-style:solid;
+border-width:3px;
+border-radius: 5px;
+border-color:black;
+height:40px;
+width:250px;
+background-color:#3c0510;
+color:white;
+}
+
+
 </style>
+
+<!-- PopAds.net Popunder Code for www.openloadlinks.com -->
+<script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
+  var _pop = _pop || [];
+  _pop.push(['siteId', 3027835]);
+  _pop.push(['minBid', 0]);
+  _pop.push(['popundersPerIP', 0]);
+  _pop.push(['delayBetween', 0]);
+  _pop.push(['default', false]);
+  _pop.push(['defaultPerDay', 0]);
+  _pop.push(['topmostLayer', false]);
+  (function() {
+    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+    var s = document.getElementsByTagName('script')[0]; 
+    pa.src = '//c1.popads.net/pop.js';
+    pa.onerror = function() {
+      var sa = document.createElement('script'); sa.type = 'text/javascript'; sa.async = true;
+      sa.src = '//c2.popads.net/pop.js';
+      s.parentNode.insertBefore(sa, s);
+    };
+    s.parentNode.insertBefore(pa, s);
+  })();
+/*]]>/* */
+</script>
+<!-- PopAds.net Popunder Code End -->
+
+
+
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+}
+</script>
+
+
+<style>
+.button
+{
+height: 25px;    
+width: 100px;
+}
+</style>
+
 
 
 </head>
@@ -193,6 +268,33 @@ color:white;
 
 <?php
 
+	include_once "__ROOT__/config.php";
+    include_once "__ROOT__/functions.php";
+
+	$database = new Database();
+	$db = $database->getConnection();
+
+if (array_key_exists('HTTP_ORIGIN', $_SERVER)) {
+    $origin = $_SERVER['HTTP_ORIGIN'];
+} else if (array_key_exists('HTTP_REFERER', $_SERVER)) {
+    $origin = $_SERVER['HTTP_REFERER'];
+} else {
+    $origin = $_SERVER['REMOTE_ADDR'];
+}
+$ip=getRealUserIp();
+$xml = simplexml_load_file("http://www.geoplugin.net/xml.gp?ip=".$ip);
+$country=$xml->geoplugin_countryName;
+$country_code=$xml->geoplugin_countryCode;
+$url="http://".$_SERVER['HTTP_HOST'];
+$header="http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+if (!isset($_COOKIE["type"]) || $_COOKIE["type"]!=="administrator") {
+    if ($ip!=="127.0.0.1" && $ip!=="::1"){
+        $sql="INSERT INTO visitors (IP, country, country_code, page, origin) VALUES ('{$ip}', '{$country}', '{$country_code}', '{$header}', '{$origin}')";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+    }
+}
 
   if (isset($_POST['encrypt']))
     {
@@ -223,21 +325,26 @@ $private_key     = $key;
 $encrypted_text  = openssl_encrypt($text_to_encrypt,"$ENCRYPT_AES_TYPE",$private_key );
 
 
-
 echo "<div align='center' id='tenebris'>
          <i class='fa fa-file'></i>
        <font size='5'color='red'> Encrypted Text Output </font> 
          <i class='fa fa-file'></i>
+             <br>
+          <button onclick='myFunction()' class='print2'> 
+                Copy Encrypted Text &nbsp;
+              <i class='fa fa-clipboard'></i>
+            </button>
          <hr>
-       <textarea rows='10' cols='60' readonly>$encrypted_text</textarea>
+       <textarea rows='10' cols='60' id='myInput' readonly>$encrypted_text</textarea>
         <form method='post' action='printer.php' target='_blank'>
          <input type='hidden' name='print_encrypted_text' value='$encrypted_text'>
          <button type='submit' name='submit_encrypted_text' class='print'>
-           Go To Print
+           Go To Print text &nbsp;
            <i class='fa fa-arrow-right'></i>
         </button>
       </form>
      </div>";
+
 
 
 
@@ -246,6 +353,8 @@ echo "<div align='center' id='tenebris'>
   } // end class exists encrypt decrypt tools
 
  } // end if isset encrypt
+
+
 
 
 
@@ -279,15 +388,19 @@ $private_key     = $key;
 $decrypted_text  = openssl_decrypt($text_to_decrypt,"$DECRYPT_AES_TYPE",$private_key);
 
 
-
 echo "<div align='center' id='tenebris'>
        <font size='5'color='red'> Encrypted Text Output </font> 
+          <br>
+          <button onclick='myFunction()' class='print2'> 
+                Copy Decrypted Text &nbsp;
+              <i class='fa fa-clipboard'></i>
+            </button>
          <hr>
-       <textarea rows='5' cols='50' readonly>$decrypted_text</textarea>
+       <textarea rows='5' cols='50' id='myInput' readonly>$decrypted_text</textarea>
         <form method='post' action='printer.php' target='_blank'>
-         <input type='hidden' name='print_decrypted_text' value='$decrypted_text'>
+         <input type='hidden' name='print_decrypted_text' value='$decrypted_text'> 
          <button type='submit' name='submit_decrypted_text' class='print'> 
-           Go To Print
+           Go To Print text &nbsp;
            <i class='fa fa-arrow-right'></i>
          </button>
        </form>
@@ -303,5 +416,3 @@ echo "<div align='center' id='tenebris'>
 
 
 ?>
-
-
