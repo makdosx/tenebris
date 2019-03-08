@@ -2,7 +2,7 @@
  Tenebris is an encryption and decryption program to reach secure conversations
   <br>
   
-  Use tenebris now: http://tenebris.co.nf/
+  Use tenebris now: http://tenebris.openloadlinks.com
   
   <br>
  
