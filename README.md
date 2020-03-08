@@ -6,16 +6,12 @@
   
   <br>
  
-1) Encrypt Method
+1) Encrypt, Decrypt Methods and Random Keys
     <br>    
- ![screenshots/encrypt1](screenshots/encrypt1.png) 
+ ![screenshots/1](screenshots/1.png) 
      <br>
- ![screenshots/encrypt2](screenshots/encrypt2.png)  
+ ![screenshots/2](screenshots/2.png)  
+  <br>
+ ![screenshots/3](screenshots/3.png)  
 
-     <br><br>
-     
-2) Decrypt Method    
-      <br>
- ![screenshots/decrypt1](screenshots/decrypt1.png)
-     <br>
- ![screenshots/decrypt2](screenshots/decrypt2.png)    
+
