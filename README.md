@@ -12,6 +12,6 @@
      <br>
  ![screenshots/2](screenshots/2.png)  
   <br>
- ![screenshots/2](screenshots/3.png) 
+ ![screenshots/3](screenshots/3.png) 
 
 
