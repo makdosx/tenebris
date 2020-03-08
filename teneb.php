@@ -217,7 +217,7 @@ $conn = mysqli_connect($host,$user,$pass,$db);
     // $private_key = substr(str_shuffle(str_repeat("0123456789", 16)), 0, 16);
     // $public_key = substr(str_shuffle(str_repeat("0123456789ABCDEF", 32)), 0, 32);
 
-    $public_key = "TENEBRIS@TENEBRIS";
+    $public_key = "TENEBRIS@TENEBRIS#2020**EB*@#E*0202@TEN@TEN";
 
     $sql = "select user from login order by user asc";
     $result = $conn->query($sql);
@@ -225,7 +225,7 @@ $conn = mysqli_connect($host,$user,$pass,$db);
        echo"
 	<div class='container-contact100'>
 		<div class='contact100-map'> 
-              <img src='images/ten1.png' height='90%' width='100%'> 
+              <img src='images/ten1.gif' height='90%' width='100%'> 
              </div>
 
 		<div class='wrap-contact100'>
@@ -233,7 +233,7 @@ $conn = mysqli_connect($host,$user,$pass,$db);
                                 <a href=''>
 				<span class='contact100-form-title'>
 				 Tenebris  
-                                 <img src='images/enc_dec2.png' height='35' width='70'> 
+                                 <img src='images/enc_dec2.png' height='35' width='70'>
 				</span>
                                 </a>
 
@@ -246,11 +246,19 @@ $conn = mysqli_connect($host,$user,$pass,$db);
                             
           
 		<div class='wrap-input100 validate-input' data-validate='Name is required'>
-                    <font size='4'> <span class='label-input100'> Welcome </span> $user_log </font> &nbsp; 
+
+                    <font size='4'> <span class='label-input100'> Welcome </span> $user_log </font> &nbsp;
+ 
                      <span class='label-input100'> Cryptography </span>
-                     <i class='fa fa-microchip'></i> 
+                     <i class='fa fa-microchip'></i> &nbsp;
+
+                      <a href='teneb_secr.php'> 
+                       <span class='label-input100'> Secret Cryptography </span>
+                       <i class='fa fa-lock'></i>  
+                       </a>
+                 
 		   <input class='input100' type='text' name='name' 
-                           value='Advanced Encryption Standard (Aes 256 CBC)' readonly>
+                           value='Default Cryptography (Aes 256 CBC)' readonly>
 		    <span class='focus-input100'></span>
 	         </div>";
 
@@ -260,8 +268,8 @@ $conn = mysqli_connect($host,$user,$pass,$db);
               
        echo"
          <div class='wrap-input100 validate-input' data-validate = 'This field is required'>
-	    <span class='label-input100'> Private Key </span>
-                      <i class='fa fa-key'></i>
+	    <span class='label-input100'> To User </span>
+                      <i class='fa fa-user'></i>
 		<select class='input100' name='priv_key'>";
  
                  while($row=$result->fetch_assoc())
@@ -289,13 +297,13 @@ $conn = mysqli_connect($host,$user,$pass,$db);
                  </div>";
 
 
-
-         echo "<div class='wrap-input100 validate-input' data-validate = 'This field is required'>
-		<span class='label-input100'> Public Key </span>
-                   <i class='fa fa-key'></i>
-		  <input class='input100' type='text' name='pub_key' value='$public_key' readonly>
-		<span class='focus-input100'></span>
-        	</div>";
+          
+        // echo "<div class='wrap-input100 validate-input' data-validate = 'This field is required'>
+	//	<span class='label-input100'> Public Key </span>
+         //          <i class='fa fa-key'></i>
+	//	  <input class='input100' type='text' name='pub_key' value='$public_key' readonly>
+	//	<span class='focus-input100'></span>
+        //	</div>";
 
 
 
@@ -455,7 +463,7 @@ echo "<div align='center' id='tenebris'>
               <i class='fa fa-clipboard'></i>
             </button>
          <hr>
-       <textarea rows='10' cols='60' id='myInput' readonly>$encrypted_text</textarea>
+       <textarea rows='10' cols='40' id='myInput' readonly>$encrypted_text</textarea>
         <form method='post' action='printer.php' target='_blank'>
          <input type='hidden' name='print_encrypted_text' value='$encrypted_text'>
          <button type='submit' name='submit_encrypted_text' class='print'>
@@ -524,7 +532,7 @@ echo "<div align='center' id='tenebris'>
               <i class='fa fa-clipboard'></i>
             </button>
          <hr>
-       <textarea rows='5' cols='50' id='myInput' readonly>$decrypted_text</textarea>
+       <textarea rows='5' cols='40' id='myInput' readonly>$decrypted_text</textarea>
         <form method='post' action='printer.php' target='_blank'>
          <input type='hidden' name='print_decrypted_text' value='$decrypted_text'> 
          <button type='submit' name='submit_decrypted_text' class='print'> 
@@ -538,7 +546,7 @@ echo "<div align='center' id='tenebris'>
 
    } // end class exists encrypt decrypt tools
 
-  } // ij private key
+  } // end if private key
 
  } // end if isset decrypt
 
