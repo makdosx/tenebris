@@ -22,6 +22,14 @@
 
 error_reporting(0);
 
+ session_start();
+
+ if (!isset($_SESSION['login']))
+    {
+      header("Location: index.php");
+      }
+
+
 ?>
 
 <html>
@@ -115,6 +123,7 @@ if (isset($_POST['submit_encrypted_text']))
     {
 
        require_once('__ROOT__/encrypt_decrypt_tools.php');
+       require_once('__ROOT__/functions.php');
 
 
     if (class_exists('SECURE_INPUT_DATA_AVAILABLE'))
@@ -146,6 +155,7 @@ if (isset($_POST['submit_decrypted_text']))
     {
 
        require_once('__ROOT__/encrypt_decrypt_tools.php');
+       require_once('__ROOT__/functions.php');
 
 
     if (class_exists('SECURE_INPUT_DATA_AVAILABLE'))
