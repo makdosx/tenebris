@@ -1,4 +1,4 @@
-css/*  linguist-generated=true
-vendor/*  linguist-generated=true
-fonts/*  linguist-generated=true
-js/*  linguist-generated=true
+css/**  linguist-vendored
+vendor/**  linguist-vendored
+fonts/**  linguist-vendored
+js/**  linguist-vendored
