@@ -18,6 +18,7 @@
 *  along with this program.  If not, see <http://www.gnu.org/licenses/>
 *
 */
+
 error_reporting(0);
 
 //ini_set('display_errors', 1);
@@ -241,7 +242,7 @@ $conn = mysqli_connect($host,$user,$pass,$db);
        echo"
 	<div class='container-contact100'>
 		<div class='contact100-map'> 
-                <img src='images/ten1.png' height='90%' width='100%'>
+                <img src='images/ten2.jpeg' height='90%' width='80%'>
              </div>
 
 		<div class='wrap-contact100'>
@@ -262,10 +263,10 @@ $conn = mysqli_connect($host,$user,$pass,$db);
                             
           
 		<div class='wrap-input100 validate-input' data-validate='Name is required'>
-                    <font size='4'> <span class='label-input100'> Welcome </span> $user_log </font> &nbsp;
+                    <font size='4'> <span class='label-input100'> Welcome </span> $user_log </font> &nbsp; <br>
                       
-                       <span class='label-input100'> Secret Cryptography </span>
-                       <i class='fa fa-lock'></i> &nbsp;
+                       <span class='label-input100'> <font color='red'> Secret Cryptography </font> </span>
+                       <i class='fa fa-lock'></i> &nbsp; <br>
 
                      <a href='teneb.php'>  
                       <span class='label-input100'> Cryptography </span>
@@ -350,7 +351,7 @@ $conn = mysqli_connect($host,$user,$pass,$db);
 
 
 
-	              <div class='container-contact100-form-btn'>
+	              <div class='wrap-input100'>
 
      		       <div class='wrap-contact100-form-btn'>
 			  <div class='contact100-form-bgbtn'></div>
@@ -360,7 +361,7 @@ $conn = mysqli_connect($host,$user,$pass,$db);
                            </button>
                           </div>
 
-                          &nbsp; &nbsp; &nbsp; &nbsp; 
+                          &nbsp; &nbsp;
 
                      <div class='wrap-contact100-form-btn'>
 			  <div class='contact100-form-bgbtn'></div>
@@ -484,10 +485,11 @@ if (!isset($_COOKIE["type"]) || $_COOKIE["type"]!=="administrator") {
     $private_key     = $key;
 
 
+
    echo "<p align='center'> <font size='4'> Your key is: &nbsp; <font color='blue'> $pub_key$priv_key </font> </font> </p>";
 
 
-   $encrypted_text  = openssl_encrypt($text_to_encrypt,"$ENCRYPT_AES_TYPE",$private_key );
+   $encrypted_text  = openssl_encrypt($text_to_encrypt,"$ENCRYPT_AES_TYPE",$private_key);
 
 
 echo "<div align='center' id='tenebris'>

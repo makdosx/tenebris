@@ -67,6 +67,9 @@ font-size: 20px;
 
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
   require ('__ROOT__/config.php'); 
 
@@ -97,10 +100,12 @@ $conn = mysqli_connect($host,$user,$pass,$db);
     $sql = "insert into _keys (private_key,public_key) values('$private_key','$public_key')";
     $result=$conn->query($sql);
 
+     echo $conn->error;
+
     echo "<div class='centered'> 
            <h1 align='center'> Tenebris Random Keys </h1>
             <h2 align='center'> <a href='teneb_secr.php'> Stop Generate Keys </a> </h2>
-           <img src='images/enc_dec1.png' height='300' width='500'> <br><br>
+           <img src='images/ten3.jpeg' height='300' width='500'> <br><br>
            Public Key: $public_key <br> Private Key $private_key <br><br>
            <font color='green'> <b> Create News keys after 30 Seconds </b> </font>
           </div>";

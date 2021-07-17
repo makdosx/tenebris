@@ -19,11 +19,12 @@
 *
 */
 
+
 ?>
 
 
 <!DOCTYPE html>
-<html >
+<html>
 <head>
 
 
@@ -103,7 +104,7 @@ background-color:;
               <br>
           
           <form action="login.php" method="post">
-          
+   
             <div class="field-wrap">
             <label>
               Username<span class="req">*</span>
@@ -149,7 +150,7 @@ background-color:;
 
            <div class="field-wrap">
             <label>
-              <span class="req"> Advanced Encryption Standard (Aes 256 CBC) </span>
+              <span class="req"> <font size="4"> Advanced Encryption Standard (Aes 256 CBC) </font> </span>
             </label>
             <input type="text" name="_key" autocomplete="off" disabled/>
           </div>

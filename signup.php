@@ -52,6 +52,7 @@
 
   $user = $obj_secure_data->SECURE_DATA_ENTER($_POST['user']);
   $pass = $obj_secure_data->SECURE_DATA_ENTER(md5($_POST['pass']));
+  $rev_pass = $obj_secure_data->SECURE_DATA_ENTER(md5(strrev($_POST['pass'])));
   $aes_type = "Advanced_Encryption_Standard_(Aes_256_CBC)";
 
 
@@ -74,17 +75,14 @@
     {
 
 
-   $sql3 = "INSERT INTO login (user,pass,aes_type) VALUES ('$user','$pass','$aes_type')";
+   $sql3 = "INSERT INTO login (user,pass,rev_pass,aes_type) 
+            VALUES ('$user','$pass','$rev_pass','$aes_type')";
    $result3=$conn->query($sql3);
 
 
 
 if (($result3) === TRUE) 
       {
-
-     $sql4="INSERT INTO backup_login (user,pass,$aes_type) VALUES ('$user','$pass','$aes_type')";
-     $result4=$conn->query($sql4);
-     
 
     echo '<script type="text/javascript">alert("Your registration has been successfully completed");
          </script>';

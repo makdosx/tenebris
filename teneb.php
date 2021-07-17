@@ -222,9 +222,12 @@ $conn = mysqli_connect($host,$user,$pass,$db);
     $result = $conn->query($sql);
     
        echo"
+       
 	<div class='container-contact100'>
+
+
 		<div class='contact100-map'> 
-              <img src='images/ten1.gif' height='90%' width='100%'> 
+              <img src='images/ten1.jpeg' height='85%' width='80%'> 
              </div>
 
 		<div class='wrap-contact100'>
@@ -246,10 +249,10 @@ $conn = mysqli_connect($host,$user,$pass,$db);
           
 		<div class='wrap-input100 validate-input' data-validate='Name is required'>
 
-                    <font size='4'> <span class='label-input100'> Welcome </span> $user_log </font> &nbsp;
+                    <font size='4'> <span class='label-input100'> Welcome </span> $user_log </font> &nbsp; <br>
  
-                     <span class='label-input100'> Cryptography </span>
-                     <i class='fa fa-microchip'></i> &nbsp;
+                     <span class='label-input100'> <font color='red'> Cryptography </font> </span>
+                     <i class='fa fa-microchip'></i> &nbsp; <br>
 
                       <a href='teneb_secr.php'> 
                        <span class='label-input100'> Secret Cryptography </span>
@@ -316,7 +319,7 @@ $conn = mysqli_connect($host,$user,$pass,$db);
 
 
 
-	              <div class='container-contact100-form-btn'>
+	              <div class='wrap-input100'>
 
      		       <div class='wrap-contact100-form-btn'>
 			  <div class='contact100-form-bgbtn'></div>
@@ -326,7 +329,7 @@ $conn = mysqli_connect($host,$user,$pass,$db);
                            </button>
                           </div>
 
-                          &nbsp; &nbsp; &nbsp; &nbsp; 
+                          &nbsp; &nbsp; 
 
                      <div class='wrap-contact100-form-btn'>
 			  <div class='contact100-form-bgbtn'></div>
@@ -384,36 +387,6 @@ $conn->close();
 
 <?php
 
-/*
-	include_once "__ROOT__/config.php";
-    include_once "__ROOT__/functions.php";
-
-	$database = new Database();
-	$db = $database->getConnection();
-
-if (array_key_exists('HTTP_ORIGIN', $_SERVER)) {
-    $origin = $_SERVER['HTTP_ORIGIN'];
-} else if (array_key_exists('HTTP_REFERER', $_SERVER)) {
-    $origin = $_SERVER['HTTP_REFERER'];
-} else {
-    $origin = $_SERVER['REMOTE_ADDR'];
-}
-$ip=getRealUserIp();
-$xml = simplexml_load_file("http://www.geoplugin.net/xml.gp?ip=".$ip);
-$country=$xml->geoplugin_countryName;
-$country_code=$xml->geoplugin_countryCode;
-$url="http://".$_SERVER['HTTP_HOST'];
-$header="http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-if (!isset($_COOKIE["type"]) || $_COOKIE["type"]!=="administrator") {
-    if ($ip!=="127.0.0.1" && $ip!=="::1"){
-        $sql="INSERT INTO visitors (IP, country, country_code, page, origin) VALUES ('{$ip}', '{$country}', '{$country_code}', '{$header}', '{$origin}')";
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-    }
-}
-
-*/
 
   if (isset($_POST['encrypt']))
     {

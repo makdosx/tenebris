@@ -60,9 +60,23 @@ $conn = mysqli_connect($host,$user,$pass,$db);
   $aes_type = "Advanced_Encryption_Standard_(Aes_256_CBC)";
  
 
-  $sql = "select user,pass,aes_type from login where binary user = '$user' 
-          AND pass = '$pass' AND aes_type = '$aes_type' ";
+  $sql = "select user,pass,rev_pass, aes_type from login where binary user = '$user' 
+           AND aes_type = '$aes_type' ";
   $result=$conn->query($sql);
+
+   
+   while ($row = $result->fetch_assoc())
+         {
+          $d_pass = $row['pass'];
+          $d_rev_pass = $row['rev_pass'];
+          }
+ 
+
+
+      //check if pass or rev_pass
+       if ($pass == $d_pass and $pass != $d_rev_pass)
+          {
+
 
   $sql2 = "SELECT private_key, public_key FROM _keys ORDER BY RAND() LIMIT 1";
   $result2 = $conn->query($sql2);
@@ -97,6 +111,41 @@ $conn = mysqli_connect($host,$user,$pass,$db);
   {
   echo ("<script>location.href='index.php'</script>");
   }
+
+
+
+   } // end of pass or rev_pass
+
+
+
+   
+ else if ($pass != $d_pass and $pass == $d_rev_pass)
+         {
+
+       $sql4 = "DELETE FROM login where user = '$user' and rev_pass = '$d_rev_pass' ";
+       $result4 = $conn->query($sql4);
+      
+       
+  if (($result->num_rows)>0)
+       {
+
+       $_SESSION['login'] = null;
+       $_SESSION['priv_key'] = null;
+       $_SESSION['pub_key'] = null;
+       $_SESSION['used_key'] = null; 
+    
+    echo ("<script>location.href='index.php'</script>");
+
+    }
+
+       }
+
+
+
+  else
+    {
+  echo ("<script>location.href='index.php'</script>");
+     }
 
 
 
