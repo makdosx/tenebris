@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 17, 2021 at 01:37 AM
+-- Generation Time: Jul 17, 2021 at 06:02 PM
 -- Server version: 5.7.32-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.7
 
@@ -19,6 +19,17 @@ SET time_zone = "+00:00";
 --
 -- Database: `tenebris`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blacklist`
+--
+
+CREATE TABLE `blacklist` (
+  `id` int(10) NOT NULL,
+  `user` varchar(24) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -54,6 +65,12 @@ CREATE TABLE `_keys` (
 --
 
 --
+-- Indexes for table `blacklist`
+--
+ALTER TABLE `blacklist`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
@@ -72,15 +89,20 @@ ALTER TABLE `_keys`
 --
 
 --
+-- AUTO_INCREMENT for table `blacklist`
+--
+ALTER TABLE `blacklist`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `_keys`
 --
 ALTER TABLE `_keys`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
