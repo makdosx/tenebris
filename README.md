@@ -8,16 +8,21 @@
  
 1) Encrypt, Decrypt Methods and Random Keys
     <br>    
- ![screenshots/1](screenshots/5.png) 
+ ![screenshots/13](screenshots/13.png) 
      <br> <br>
      
-  ![screenshots/1](screenshots/6.png) 
+  ![screenshots/8](screenshots/8.png) 
      <br> <br> <br> <br> <br>
      
- ![screenshots/1](screenshots/7.png) 
+ ![screenshots/9](screenshots/9.png) 
      <br> <br> <br>
      
- ![screenshots/2](screenshots/4.png)  
-  <br>
+ ![screenshots/10](screenshots/10.png)  
+  <br><br>
 
+![screenshots/11](screenshots/11.png)  
+  <br><br>
+  
+  ![screenshots/12](screenshots/12.png)  
+  <br><br>
 
