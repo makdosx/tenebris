@@ -1,7 +1,7 @@
 <?php
 
 /*
-*  Copyright (c) 2019-2020 Barchampas Gerasimos <makindosxx@gmail.com>.
+*  Copyright (c) 2019-2021 Barchampas Gerasimos <makindosxx@gmail.com>.
 *  Tenebris is an encryption and decryption program to reach secure conversations.
 *
 *  Tenebris program is free software: you can redistribute it and/or modify
@@ -56,9 +56,14 @@
   $aes_type = "Advanced_Encryption_Standard_(Aes_256_CBC)";
 
 
- $sql1="SELECT * FROM login WHERE user = '$user'";
+ $sql1="SELECT user FROM login WHERE user = '$user'";
 
  $result1=$conn->query($sql1);
+
+
+ $sql2="SELECT user FROM blacklist WHERE user = '$user'";
+
+ $result2=$conn->query($sql2);
 
  
 
@@ -69,10 +74,32 @@
          </script>';
      echo ("<script>location.href='index.php'</script>");
        }
+     
+ 
+ else if (($result2->num_rows)>0)
+      {
+     echo '<script type="text/javascript">alert("This name exists. Please choose an another name");
+         </script>';
+     echo ("<script>location.href='index.php'</script>");
+       }
 
 
    else
     {
+
+
+
+    if ($pass == $rev_pass)
+      {
+      echo '<script type="text/javascript">alert("The password cannot be the same normal and reverse. Choose another password.");
+         </script>';
+       echo ("<script>location.href='index.php'</script>");
+        }
+
+
+
+     else
+      {
 
 
    $sql3 = "INSERT INTO login (user,pass,rev_pass,aes_type) 
@@ -98,7 +125,10 @@ if (($result3) === TRUE)
      }
 
 
-   } // end of else sign up
+   } // end else of pass and rev pass
+
+  
+   } // end else of num rows
   
 
    }//  end of else connect

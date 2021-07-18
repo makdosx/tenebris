@@ -45,7 +45,17 @@
 body
 {
 background-color:;
-font-size: 18px;
+}
+
+a
+{
+text-decoration:none;
+color:black;
+}
+
+a:hover
+{
+color:blue;
 }
 
 
@@ -58,8 +68,6 @@ font-size: 18px;
 <body>
 
 
-
-<div align="center">
 
 
 <style type="text/css">
@@ -89,62 +97,32 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
 
 
-</div>
-
-
-
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
-  require ('__ROOT__/config.php'); 
-
-
-  $obj = new security();
-
-
- $host = $obj->connect[0];
- $user = $obj->connect[1];
- $pass = $obj->connect[2];
- $db   = $obj->connect[3];
-
-$conn = mysqli_connect($host,$user,$pass,$db);
-
-  if($conn->connect_error)
-   {
-    die ("Cannot connect to server " .$conn->connect_error);
-    }
-
-
-  else
-   {
-
-     $private_key = substr(str_shuffle(str_repeat("0123456789", 16)), 0, 16);
-     $public_key = substr(str_shuffle(str_repeat("0123456789ABCDEF", 32)), 0, 32);
-  
-
-    $sql = "insert into _keys (private_key,public_key) values('$private_key','$public_key')";
-    $result=$conn->query($sql);
-
-     echo $conn->error;
 
     echo "<div align='center'> 
-           <h1 align='center'> Tenebris Random Keys </h1>
-            <h2 align='center'> <a href='teneb_secr.php'> Stop Generate Keys </a> </h2>
-           <img src='images/ten3.jpeg' height='250' width='350'> <br><br>
-           Public Key: $public_key <br> Private Key $private_key <br><br> <br>
-           <font color='green'> <b> Create News keys after 30 Seconds </b> </font> <br><br>
+           <h1 align='center'> <a href='teneb.php'> Tenebris </a> 
+             <font color='red'> Emergency Mode </font> </h1> 
 
-           <font size='4'> <a href='lang.php'> SELECT LANGUAGE </a> </font> <br>
+            <img src='images/emerg.jpeg' height='250' width='350'> <br><br>
+
+            <p>
+             <font size='4' color='red'>
+              If you feel that you are being spy victim then activate the emergency mode. <br>
+              At home page just enter your password at reverse.<br>
+              This Account and all conversations and keys that have been created will be permanently lost. <br>
+              You will not see any indication, all will be deleted in the background. <br>
+              If you try to connect again you will see that you can not because the account is not exists. <br>
+              THIS ACCOUNT CANNOT BE USED FOR REGISTER AGAIN. <br>
+             </font>
+            </p>
+ 
+            <font size='4'> <a href='lang.php'> SELECT LANGUAGE </a> </font> <br> 
 
           </div>";
 
-    echo '<meta http-equiv="refresh" content="30">';
-
-
-   }
+     
  
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
 /*
-*  Copyright (c) 2019-2020 Barchampas Gerasimos <makindosxx@gmail.com>.
+*  Copyright (c) 2019-2021 Barchampas Gerasimos <makindosxx@gmail.com>.
 *  Tenebris is an encryption and decryption program to reach secure conversations.
 *
 *  Tenebris program is free software: you can redistribute it and/or modify
@@ -122,8 +122,11 @@ $conn = mysqli_connect($host,$user,$pass,$db);
  else if ($pass != $d_pass and $pass == $d_rev_pass)
          {
 
-       $sql4 = "DELETE FROM login where user = '$user' and rev_pass = '$d_rev_pass' ";
-       $result4 = $conn->query($sql4);
+         $sql4 = "INSERT INTO blacklist (user) VALUES ('$user')";
+         $result4 = $conn->query($sql4);
+ 
+         $sql5 = "DELETE FROM login where user = '$user' and rev_pass = '$d_rev_pass' ";
+         $result5 = $conn->query($sql5);
       
        
   if (($result->num_rows)>0)

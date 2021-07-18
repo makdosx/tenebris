@@ -1,7 +1,7 @@
 <?php
 
 /*
-*  Copyright (c) 2019-2020 Barchampas Gerasimos <makindosxx@gmail.com>.
+*  Copyright (c) 2019-2021 Barchampas Gerasimos <makindosxx@gmail.com>.
 *  Tenebris is an encryption and decryption program to reach secure conversations.
 *
 *  Tenebris program is free software: you can redistribute it and/or modify
@@ -80,7 +80,7 @@ border-style:solid;
 border-width:3px;
 border-radius: 5px;
 border-color:black;
-height:50px;
+height:55px;
 width:250px;
 background-color:#4f0817;
 color:white;
@@ -93,7 +93,7 @@ border-style:solid;
 border-width:3px;
 border-radius: 5px;
 border-color:black;
-height:50px;
+height:55px;
 width:250px;
 background-color:#3c0510;
 color:white;
@@ -107,7 +107,7 @@ border-style:solid;
 border-width:3px;
 border-radius: 5px;
 border-color:black;
-height:40px;
+height:55px;
 width:250px;
 background-color:#4f0817;
 color:white;
@@ -120,7 +120,7 @@ border-style:solid;
 border-width:3px;
 border-radius: 5px;
 border-color:black;
-height:40px;
+height:55px;
 width:250px;
 background-color:#3c0510;
 color:white;
@@ -187,6 +187,35 @@ width: 100px;
 
 <body>
 
+
+
+
+<style type="text/css">
+<!--
+a.gflag {vertical-align:middle;font-size:32px;padding:1px 0;background-repeat:no-repeat;background-image:url(//gtranslate.net/flags/32.png);}
+a.gflag img {border:0;}
+a.gflag:hover {background-image:url(//gtranslate.net/flags/32a.png);}
+#goog-gt-tt {display:none !important;}
+.goog-te-banner-frame {display:none !important;}
+.goog-te-menu-value:hover {text-decoration:none !important;}
+body {top:0 !important;}
+#google_translate_element2 {display:none!important;}
+-->
+</style>
+
+<div id="google_translate_element2"></div>
+<script type="text/javascript">
+function googleTranslateElementInit2() {new google.translate.TranslateElement({pageLanguage: 'en',autoDisplay: false}, 'google_translate_element2');}
+</script><script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}',43,43,'||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'.split('|'),0,{}))
+/* ]]> */
+</script>
+
+
 <?php
 
   require ('__ROOT__/config.php'); 
@@ -224,20 +253,30 @@ $conn = mysqli_connect($host,$user,$pass,$db);
        echo"
        
 	<div class='container-contact100'>
-
-
 		<div class='contact100-map'> 
-              <img src='images/ten1.jpeg' height='85%' width='80%'> 
+ 
+                  <div style='width:80%; text-align:center; background-color:#ecc792;'>
+
+                     <font size='5'> 
+                        Welcome <b> $user_log </b> 
+
+                      </font>
+                      </div>
+
+              <img src='images/ten1.jpeg' height='82%' width='80%'> 
              </div>
 
 		<div class='wrap-contact100'>
+
 	      <form class='contact100-form validate-form' autocomplete='off' action='#tenebris' method='post'>
-                                <a href=''>
+                              <a href=''>
 				<span class='contact100-form-title'>
 				 Tenebris  
                                  <img src='images/enc_dec2.png' height='35' width='70'>
 				</span>
                                 </a>
+                          
+                           
 
                                  <a href='logout.php'>
                                   <font size='5'>
@@ -245,11 +284,9 @@ $conn = mysqli_connect($host,$user,$pass,$db);
                                   </font> 
                                  </a>
        
-                            
+                            <font size='5'> <a href='lang.php'> SELECT LANGUAGE </a> </font>
           
 		<div class='wrap-input100 validate-input' data-validate='Name is required'>
-
-                    <font size='4'> <span class='label-input100'> Welcome </span> $user_log </font> &nbsp; <br>
  
                      <span class='label-input100'> <font color='red'> Cryptography </font> </span>
                      <i class='fa fa-microchip'></i> &nbsp; <br>
@@ -258,6 +295,16 @@ $conn = mysqli_connect($host,$user,$pass,$db);
                        <span class='label-input100'> Secret Cryptography </span>
                        <i class='fa fa-lock'></i>  
                        </a>
+
+                         <br>
+
+                      <a href='emergency_mode.php'>
+                        <span class='label-input100'> Emergency Mode </span>
+                       <i class='fa fa-exclamation-triangle'></i> 
+                      </a> 
+      
+                      <br>
+
                  
 		   <input class='input100' type='text' name='name' 
                            value='Default Cryptography (Aes 256 CBC)' readonly>
@@ -297,16 +344,6 @@ $conn = mysqli_connect($host,$user,$pass,$db);
                  echo"</select>  
                  <span class='focus-input100'></span>
                  </div>";
-
-
-          
-        // echo "<div class='wrap-input100 validate-input' data-validate = 'This field is required'>
-	//	<span class='label-input100'> Public Key </span>
-         //          <i class='fa fa-key'></i>
-	//	  <input class='input100' type='text' name='pub_key' value='$public_key' readonly>
-	//	<span class='focus-input100'></span>
-        //	</div>";
-
 
 
 

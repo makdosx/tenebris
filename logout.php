@@ -1,7 +1,7 @@
 <?php 
 
 /*
-*  Copyright (c) 2019-2020 Barchampas Gerasimos <makindosxx@gmail.com>.
+*  Copyright (c) 2019-2021 Barchampas Gerasimos <makindosxx@gmail.com>.
 *  Tenebris is an encryption and decryption program to reach secure conversations.
 *
 *  Tenebris program is free software: you can redistribute it and/or modify
