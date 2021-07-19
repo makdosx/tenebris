@@ -1,10 +1,7 @@
  #tenebris <br>
  Tenebris is an encryption and decryption program to reach secure conversations
   <br>
-  
-  Use tenebris now: http://tenebris.c1.biz/
-  
-  <br>
+
  
 1) Encrypt, Decrypt Methods and Random Keys
     <br>    
